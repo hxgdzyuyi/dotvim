@@ -1,0 +1,12 @@
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+" Bundle List
+Bundle 'gmarik/vundle'
+Bundle 'EasyMotion'
+Bundle 'git://github.com/mileszs/ack.vim.git'
+Bundle 'Tagbar'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'vim-stylus'
+Bundle 'ctrlp.vim'
