@@ -16,6 +16,7 @@ endif
 au BufNewFile,BufRead *.jsm set filetype=javascript
 au BufNewFile,BufRead *.php set filetype=php
 au BufNewFile,BufRead *.html set filetype=mako
+au BufRead,BufNewFile *.md setfiletype markdown
 au BufNewFile,BufRead *.rb set filetype=ruby
 colorscheme pablo
 
