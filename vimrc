@@ -36,7 +36,7 @@ set shiftwidth=2
 set tabstop=2
 set softtabstop=2
 map ,n :NERDTreeToggle<CR>
-map ,l :TlistToggle<CR>
+map ,l :TagbarToggle<CR>
 if !exists("g:completekey")
 let g:completekey = "<C-j>"   "hotkey
 endif
@@ -68,7 +68,7 @@ set matchpairs=(:),{:},[:],<:>
 set whichwrap=b,s,<,>,[,]
 set backspace=indent,eol,start
 
-let tlist_mako_settings = 'mako;n:name'
+let tlist_mako_settings = 'mako;f:function'
 au BufNewFile,BufRead *.php set filetype=php
 let tlist_Ctags_Cmd = '/usr/bin/ctags'
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
@@ -82,3 +82,27 @@ vmap <F6> :!xclip -f -sel clip<CR>
 map <F7> :-1r !xclip -o -sel clip<CR>
 map <c-p> :tabprevious<enter>
 map <c-n> :tabnext<enter>
+
+let g:tagbar_type_mako = {
+    \ 'ctagstype' : 'mako',
+    \ 'kinds'     : [
+        \ 'f:function',
+    \ ]
+\ }
+
+nnoremap <leader>hc :call ToggleCommentHighlight()<cr>
+let s:comment_highlighting = 0
+function! ToggleCommentHighlight()
+  if s:comment_highlighting
+    let s:comment_highlighting = 0
+    colorscheme pablo
+    hi ColorColumn ctermbg=lightgrey
+    return
+  endif
+
+  let s:comment_highlighting = 1
+  hi Comment guifg=#bcbcbc gui=none
+  hi Comment ctermfg=250 cterm=none
+endfunction
+
+
