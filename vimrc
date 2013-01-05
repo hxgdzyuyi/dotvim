@@ -75,6 +75,7 @@ let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 set colorcolumn=80
 let b:jslint_disabled=1
 let g:ctrlp_map = '<Leader>t'
+let g:ctrlp_custom_ignore = '\v[\/]\.'
 hi ColorColumn ctermbg=gray guibg=gray
 set incsearch
 " 通过 xclip 复制粘贴
@@ -104,5 +105,3 @@ function! ToggleCommentHighlight()
   hi Comment guifg=#bcbcbc gui=none
   hi Comment ctermfg=250 cterm=none
 endfunction
-
-
