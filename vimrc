@@ -105,3 +105,7 @@ function! ToggleCommentHighlight()
   hi Comment guifg=#bcbcbc gui=none
   hi Comment ctermfg=250 cterm=none
 endfunction
+autocmd BufWritePost *.js
+  \  if expand("%:p:h") =~ 'public/js/\(publish\|mobile\|reader\|mod\)'
+  \  | execute "silent !grunt >/dev/null 2>&1 &"
+  \  | endif
