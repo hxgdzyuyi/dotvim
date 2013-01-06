@@ -109,8 +109,9 @@ let g:tagbar_type_mako = {
   endfunction
 " }
 
-" Custom autocmd {
+" Custom Autocmd {
   autocmd GUIEnter * simalt ~x
+  autocmd BufWritePost vimrc source ~/.vimrc
   autocmd BufWritePost *.js
     \  if expand("%:p:h") =~ 'public/js/\(publish\|mobile\|reader\|mod\)'
     \  | execute "silent !grunt >/dev/null 2>&1 &"
