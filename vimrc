@@ -92,7 +92,7 @@ let g:tagbar_type_mako = {
     \ ]
 \ }
 
-" Toggle highlighting {
+" Toggle comment highlighting {
   nnoremap <leader>hc :call ToggleCommentHighlight()<cr>
   let s:comment_highlighting = 0
   function! ToggleCommentHighlight()
