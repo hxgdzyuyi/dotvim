@@ -117,3 +117,25 @@ let g:tagbar_type_mako = {
     \  | execute "silent !grunt >/dev/null 2>&1 &"
     \  | endif
 " }
+
+python << EOF
+import vim
+from  os import path
+def GoToTemplate():
+    import re
+    strLine = vim.current.line
+    templates = re.findall(r'file="(.*?)"', strLine)
+
+    filename = templates[0]
+    if filename[0:1] == '/':
+        filename = 'template' + filename
+    else:
+        filename = vim.eval("expand('%:p:h')") + '/' + filename
+
+    print filename
+    if path.exists(filename) :
+        vim.command("e %s" % filename)
+        return
+
+EOF
+nnoremap <c-g> :py GoToTemplate()<CR>
