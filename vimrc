@@ -102,6 +102,8 @@ let g:tagbar_type_mako = {
   endfunction
 " }
 
+autocmd BufNewFile,BufRead *.html set filetype=mako
+
 " Custom Autocmd {
 "  autocmd GUIEnter * simalt ~x
 "  autocmd BufWritePost vimrc source ~/.vimrc
