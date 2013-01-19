@@ -11,33 +11,25 @@ set listchars=tab:▸\ ,trail:·
 
 " Source a global configuration file if available
 if filereadable("/etc/vim/vimrc.local")
-source /etc/vim/vimrc.local
+  source /etc/vim/vimrc.local
 endif
-autocmd BufNewFile,BufRead *.jsm set filetype=javascript
-autocmd BufNewFile,BufRead *.php set filetype=php
-autocmd BufNewFile,BufRead *.html set filetype=mako
-autocmd BufRead,BufNewFile *.md set markdown
-autocmd BufNewFile,BufRead *.rb set filetype=ruby
+
 colorscheme pablo
 
 filetype plugin indent on
-autocmd FileType javascript set dictionary+=~/.vim/dict/javascript.dict
-autocmd FileType javascript set dictionary+=~/.vim/dict/backbone.dict
-autocmd FileType javascript set dictionary+=~/.vim/dict/jquery.dict
-autocmd FileType css set dictionary=~/.vim/dict/css.dict
-autocmd FileType php set dictionary=~/.vim/dict/php.dict
 set autoindent
 set cindent
 set rnu
-
 set expandtab
 set shiftwidth=2
 set tabstop=2
 set softtabstop=2
+
 map ,n :NERDTreeToggle<CR>
 map ,l :TagbarToggle<CR>
+
 if !exists("g:completekey")
-let g:completekey = "<C-j>" " hotkey
+  let g:completekey = "<C-j>" " hotkey
 endif
 
 " Key Mapping {
@@ -61,10 +53,11 @@ endif
   inoremap ,,4 ,function(){}<left><enter><esc>O
   inoremap ,v ,function(){}<left><enter><esc>O
   nmap ,f /<c-r><c-w>:<enter>
+  nnoremap <leader>q :close<CR>
 " }
 
 
-let g:SuperTabDefaultCompletionType="<C-X><C-K>"
+let g:SuperTabDefaultCompletionType="<C-X><C-N>"
 set matchpairs=(:),{:},[:],<:>
 set whichwrap=b,s,<,>,[,]
 set backspace=indent,eol,start
@@ -118,5 +111,4 @@ let g:tagbar_type_mako = {
 "    \  | endif
 " }
 
-nnoremap <leader>q :close<CR>
 let g:shirevim#app="waymeet"
