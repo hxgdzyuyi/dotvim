@@ -54,6 +54,7 @@ endif
   inoremap ,v ,function(){}<left><enter><esc>O
   nmap ,f /<c-r><c-w>:<enter>
   nnoremap <leader>q :close<CR>
+  set pastetoggle=<leader>p
 " }
 
 
