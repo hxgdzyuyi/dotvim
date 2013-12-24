@@ -45,13 +45,12 @@ endif
   inoremap <c-k> <up>
   inoremap <c-l> <right>
   inoremap <c-c> <esc>
-  map ,<space> :w<enter>
+  map ,<space> :update<CR>
   nnoremap <LocalLeader>i2 :setl ts=2 sw=2 sts=2<CR>
   nnoremap <LocalLeader>i4 :setl ts=4 sw=4 sts=4<CR>
   nnoremap <LocalLeader>et :setl et!<CR>
-  inoremap ,4 function(){}<left><enter><esc>O
-  inoremap ,,4 ,function(){}<left><enter><esc>O
-  inoremap ,v ,function(){}<left><enter><esc>O
+  inoremap ,4 function() {}<left><enter><esc>O
+  inoremap cl<Tab> console.log()<left>
   nmap ,f /<c-r><c-w>:<enter>
   nnoremap <leader>q :close<CR>
   set pastetoggle=<leader>p
@@ -69,7 +68,9 @@ let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 set colorcolumn=80
 let b:jslint_disabled=1
 let g:ctrlp_map = '<Leader>t'
-let g:ctrlp_custom_ignore = '\v[\/]\.'
+let g:ctrlp_custom_ignore = {
+  \ 'dir': '\v[\/]\.|dist|node_modules|bower_components'
+  \ }
 hi ColorColumn ctermbg=gray guibg=gray
 set incsearch
 
