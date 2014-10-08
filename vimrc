@@ -116,3 +116,6 @@ autocmd BufNewFile,BufRead *.html set filetype=mako
 " }
 
 let g:shirevim#app="waymeet"
+
+set laststatus=2
+set statusline+=%8*\ %=\ row:%l/%L\ (%03p%%)\
