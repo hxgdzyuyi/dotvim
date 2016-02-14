@@ -7,7 +7,7 @@ set noswapfile
 set fileencodings=ucs-bom,utf-8,chinese,cp936
 set isk+=-
 set list
-set listchars=tab:▸\ ,trail:·
+set listchars=tab:\ \ ,trail:·
 
 " Source a global configuration file if available
 if filereadable("/etc/vim/vimrc.local")
@@ -105,6 +105,13 @@ let g:tagbar_type_mako = {
 " }
 
 autocmd BufNewFile,BufRead *.html set filetype=mako
+autocmd BufNewFile,BufRead *.hds set filetype=html
+autocmd BufNewFile,BufRead *.ftl set filetype=ftl
+autocmd BufNewFile,BufRead *.handlebars set filetype=html
+autocmd BufNewFile,BufRead *.json set filetype=javascript
+autocmd FileType html,js EmmetInstall
+autocmd FileType go set listchars=tab:\ \ ,trail:·
+
 
 " Custom Autocmd {
 "  autocmd GUIEnter * simalt ~x
@@ -119,3 +126,4 @@ let g:shirevim#app="waymeet"
 
 set laststatus=2
 set statusline+=%8*\ %=\ row:%l/%L\ (%03p%%)\
+set ffs=unix,dos
