@@ -74,6 +74,7 @@ let g:ctrlp_custom_ignore = {
 hi ColorColumn ctermbg=gray guibg=gray
 set incsearch
 
+
 " 通过 xclip 复制粘贴
 vmap <F6> :!xclip -f -sel clip<CR>
 map <F7> :-1r !xclip -o -sel clip<CR>
@@ -127,3 +128,4 @@ let g:shirevim#app="waymeet"
 set laststatus=2
 set statusline+=%8*\ %=\ row:%l/%L\ (%03p%%)\
 set ffs=unix,dos
+set clipboard=unnamed
