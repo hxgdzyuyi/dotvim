@@ -129,3 +129,7 @@ set laststatus=2
 set statusline+=%8*\ %=\ row:%l/%L\ (%03p%%)\
 set ffs=unix,dos
 set clipboard=unnamed
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
