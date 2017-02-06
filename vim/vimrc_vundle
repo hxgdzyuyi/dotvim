@@ -16,7 +16,6 @@ Plugin 'https://github.com/slim-template/vim-slim.git'
 Plugin 'fugitive.vim'
 Plugin 'https://github.com/keitheis/vim-plim.git'
 Plugin 'vim-coffee-script'
-Plugin 'https://github.com/isRuslan/vim-es6.git'
 Plugin 'https://github.com/mattn/emmet-vim'
 Plugin 'chaquotay/ftl-vim-syntax'
 Plugin 'fatih/vim-go'
@@ -29,6 +28,7 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'posva/vim-vue'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'majutsushi/tagbar'
+Plugin 'isRuslan/vim-es6'
 
 call vundle#end()
 filetype plugin indent on
