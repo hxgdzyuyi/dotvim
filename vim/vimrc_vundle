@@ -3,6 +3,7 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 " Bundle List
+"Bundle 'dhruvasagar/vim-table-mode'
 Bundle 'gmarik/vundle'
 Bundle 'EasyMotion'
 Bundle 'git://github.com/mileszs/ack.vim.git'
@@ -22,5 +23,10 @@ Bundle 'https://github.com/mattn/emmet-vim'
 Bundle 'chaquotay/ftl-vim-syntax'
 Bundle 'fatih/vim-go'
 Bundle 'SirVer/ultisnips'
-
 Bundle 'honza/vim-snippets'
+Bundle 'jade.vim'
+Bundle 'captbaritone/better-indent-support-for-php-with-html'
+Bundle 'evidens/vim-twig'
+Bundle 'leafgarland/typescript-vim'
+Bundle 'posva/vim-vue'
+Bundle 'elixir-lang/vim-elixir'

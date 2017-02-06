@@ -50,6 +50,7 @@ endif
   nnoremap <LocalLeader>i4 :setl ts=4 sw=4 sts=4<CR>
   nnoremap <LocalLeader>et :setl et!<CR>
   inoremap ,4 function() {}<left><enter><esc>O
+  inoremap ,5 () => {}<left><enter><esc>O
   inoremap cl<Tab> console.log()<left>
   nmap ,f /<c-r><c-w>:<enter>
   nnoremap <leader>q :close<CR>
@@ -106,10 +107,13 @@ let g:tagbar_type_mako = {
 " }
 
 autocmd BufNewFile,BufRead *.html set filetype=mako
+autocmd BufNewFile,BufRead *.inc set filetype=html
 autocmd BufNewFile,BufRead *.hds set filetype=html
 autocmd BufNewFile,BufRead *.ftl set filetype=ftl
 autocmd BufNewFile,BufRead *.handlebars set filetype=html
+autocmd BufNewFile,BufRead *.hbs set filetype=html
 autocmd BufNewFile,BufRead *.json set filetype=javascript
+autocmd BufNewFile,BufRead *.pug set filetype=jade
 autocmd FileType html,js EmmetInstall
 autocmd FileType go set listchars=tab:\ \ ,trail:·
 
@@ -133,3 +137,5 @@ set clipboard=unnamed
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+cabbrev gm tabnew<space>~/.commit-for-git
