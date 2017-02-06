@@ -6,7 +6,6 @@ call vundle#begin()
 "Bundle 'dhruvasagar/vim-table-mode'
 Plugin 'EasyMotion'
 Plugin 'git://github.com/mileszs/ack.vim.git'
-Plugin 'Tagbar'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-stylus'
 Plugin 'ctrlp.vim'
@@ -29,6 +28,7 @@ Plugin 'evidens/vim-twig'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'posva/vim-vue'
 Plugin 'elixir-lang/vim-elixir'
+Plugin 'majutsushi/tagbar'
 
 call vundle#end()
 filetype plugin indent on
