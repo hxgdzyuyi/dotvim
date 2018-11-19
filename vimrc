@@ -17,8 +17,6 @@ endif
 colorscheme pablo
 
 filetype plugin indent on
-set autoindent
-set cindent
 set rnu
 set expandtab
 set shiftwidth=2
@@ -70,7 +68,7 @@ set colorcolumn=80
 let b:jslint_disabled=1
 let g:ctrlp_map = '<Leader>t'
 let g:ctrlp_custom_ignore = {
-  \ 'dir': '\v[\/]\.|dist|node_modules|bower_components'
+  \ 'dir': '\v[\/]\.|dist|node_modules|bower_components|build'
   \ }
 hi ColorColumn ctermbg=gray guibg=gray
 set incsearch
@@ -107,6 +105,8 @@ let g:tagbar_type_mako = {
 " }
 
 autocmd BufNewFile,BufRead *.html set filetype=mako
+autocmd BufNewFile,BufRead *.wxml set filetype=html
+autocmd BufNewFile,BufRead *.wxss set filetype=css
 autocmd BufNewFile,BufRead *.inc set filetype=html
 autocmd BufNewFile,BufRead *.hds set filetype=html
 autocmd BufNewFile,BufRead *.ftl set filetype=ftl
@@ -114,8 +114,11 @@ autocmd BufNewFile,BufRead *.handlebars set filetype=html
 autocmd BufNewFile,BufRead *.hbs set filetype=html
 autocmd BufNewFile,BufRead *.json set filetype=javascript
 autocmd BufNewFile,BufRead *.pug set filetype=jade
+autocmd BufNewFile,BufRead .php_cs set filetype=php
+autocmd BufNewFile,BufRead *.stub set filetype=php
 autocmd FileType html,js EmmetInstall
 autocmd FileType go set listchars=tab:\ \ ,trail:·
+autocmd Filetype crontab setlocal nobackup nowritebackup
 
 
 " Custom Autocmd {
@@ -138,4 +141,32 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
+
 cabbrev gm tabnew<space>~/.commit-for-git
+
+"-------------  pdv --------------"
+let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
+nnoremap <buffer> <C-p> :call pdv#DocumentWithSnip()<CR>
+
+"------------- Functions --------------"
+function! IPhpInsertUse()
+    call PhpInsertUse()
+    call feedkeys('a',  'n')
+endfunction
+autocmd FileType php inoremap <Leader>n <Esc>:call IPhpInsertUse()<CR>
+autocmd FileType php noremap <Leader>n :call PhpInsertUse()<CR>
+
+function! IPhpExpandClass()
+    call PhpExpandClass()
+    call feedkeys('a', 'n')
+endfunction
+autocmd FileType php inoremap <Leader>nf <Esc>:call IPhpExpandClass()<CR>
+autocmd FileType php noremap <Leader>nf :call PhpExpandClass()<CR>
+
+set tags+=tags,tags.vendors
+let g:loaded_sql_completion = 0
+
+au BufRead,BufNewFile *.vue set ft=javascript.jsx
+au BufRead,BufNewFile *.wxa set ft=javascript.jsx
+au BufRead,BufNewFile *.wxp set ft=javascript.jsx
+au BufRead,BufNewFile *.wxc set ft=javascript.jsx
