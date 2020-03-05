@@ -9,7 +9,7 @@ Plugin 'git://github.com/mileszs/ack.vim.git'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-stylus'
 Plugin 'ctrlp.vim'
-Plugin 'Markdown'
+Plugin 'plasticboy/vim-markdown'
 Plugin 'The-NERD-Commenter'
 Plugin 'The-NERD-tree'
 Plugin 'https://github.com/slim-template/vim-slim.git'
@@ -37,6 +37,9 @@ Plugin 'posva/vim-vue'
 Plugin 'keith/swift.vim'
 Plugin 'martinda/Jenkinsfile-vim-syntax'
 Plugin 'rust-lang/rust.vim'
+Plugin 'StanAngeloff/php.vim'
+Plugin 'jparise/vim-graphql'
+Plugin 'stephpy/vim-yaml'
 
 call vundle#end()
 filetype plugin indent on

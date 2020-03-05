@@ -30,6 +30,10 @@ if !exists("g:completekey")
   let g:completekey = "<C-j>" " hotkey
 endif
 
+" Laravel-Specific Mapping {
+  nmap ,lr :CtrlP<CR>routes/api_v2.php<CR>
+" }
+
 " Key Mapping {
   let mapleader = ","
   let maplocalleader = "\\"
@@ -68,7 +72,7 @@ set colorcolumn=80
 let b:jslint_disabled=1
 let g:ctrlp_map = '<Leader>t'
 let g:ctrlp_custom_ignore = {
-  \ 'dir': '\v[\/]\.|dist|node_modules|bower_components|build'
+  \ 'dir': '\v[\/]\.|dist|node_modules|bower_components|^build'
   \ }
 hi ColorColumn ctermbg=gray guibg=gray
 set incsearch
@@ -170,3 +174,5 @@ au BufRead,BufNewFile *.vue set ft=javascript.jsx
 au BufRead,BufNewFile *.wxa set ft=javascript.jsx
 au BufRead,BufNewFile *.wxp set ft=javascript.jsx
 au BufRead,BufNewFile *.wxc set ft=javascript.jsx
+
+let g:vim_markdown_folding_disabled = 1
